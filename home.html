@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img id="imglogo" src="./img/logoTask.png" alt="">
+            <div>
+                <span>Let’s get shit done!</span>
+                <img src="./img/2d2e834bbaad79416720e7e3df919614.png" alt="">
+            </div>
+        </div>
+        <div id="newtask">
+            <button onclick="addTodo()"><span>+</span> <span>New task</span></button>
+        </div>
+    </header>
+    <div id = "input">
+        <form>
+            <input type="text" required>
+            <input type="text" required>
+            <input type="text" required>
+            <button onclick="SaveInput()">ADD</button>
+        </form>
+    </div>
+    <div class="container">
+        <div class="form" id="todos">
+            <div id="todo" class="headerlists">
+                <div>
+                    <h2>Todoing</h2>
+                    <span>3</span>
+                </div>
+            </div>
+            <div class="list" id="todos" draggable="true">
+                <a href="">Marketing</a>
+                <h3>Write SEO article for new product</h3>
+                <p>this is an mkkm mkmkmsad mkasdm anksdmk aksdnk</p>
+                <span>29/11/2004</span>
+                <div class="icons">
+                    <i class="fas fa-edit edit-icon" onclick="editTodo()"></i>
+                    <i class="fas fa-trash delete-icon" onclick="deleteTodo()"></i>
+                </div>
+            </div>
+            <div class="list" id="todos" draggable="true">
+                <a href="">Marketing</a>
+                <h3>Write SEO article for new product</h3>
+                <p>this is an mkkm mkmkmsad mkasdm anksdmk aksdnk</p>
+                <span>29/11/2004</span>
+                <div class="icons">
+                    <i class="fas fa-edit edit-icon" onclick="editTodo()"></i>
+                    <i class="fas fa-trash delete-icon" onclick="deleteTodo()"></i>
+                </div>
+            </div>
+            <div class="list" id="todos" draggable="true">
+                <a href="">Marketing</a>
+                <h3>Write SEO article for new product</h3>
+                <p>this is an mkkm mkmkmsad mkasdm anksdmk aksdnk</p>
+                <span>29/11/2004</span>
+                <div class="icons">
+                    <i class="fas fa-edit edit-icon" onclick="editTodo()"></i>
+                    <i class="fas fa-trash delete-icon" onclick="deleteTodo()"></i>
+                </div>
+            </div>
+            
+        </div>
+        <div class="form" id="doings">
+            <div id="doing" class="headerlists">
+                <div>
+                    <h2>Doing</h2>
+                    <span>3</span>
+                </div>
+            </div>
+        </div>
+        <div class="form" id="completeds">
+            <div id="completed" class="headerlists">
+                <div>
+                    <h2>Completed</h2>
+                    <span>3</span>
+                </div>
+            </div>
+        </div>
+        <div class="form" id="blockeds">
+            <div id="blocked" class="headerlists">
+                <div>
+                    <h2>Blocked</h2>
+                    <span>3</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./home.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    display: flex;
+    justify-content: center;
+}
+body{
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 1280px;
+    height: 1024px;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+#img1{
+    position: absolute;
+    width: 572.71px;
+    height: 592px;
+    top: -80px;
+    left: 845px;
+}
+#img1 img{
+    width: 500.51px;
+    height: 592px;
+    top: -80px;
+    left: 917.19px;
+}
+#img2{
+    position: absolute;
+    width: 569px;
+    height: 588.17px;
+    top: 451px;
+    left: -88px;
+}
+#img3{
+    position: absolute;
+    width: 79.17px;
+    height: 79px;
+    top: 841px;
+    left: 1030px;
+}
+.container{
+    position: absolute;
+    display: flex;
+    background-color: #FFFFFF;
+    justify-content: center;
+    width: 1024px;
+    height: 700px;
+    top: 158px;
+    left: 136px;
+    padding-right: 120px;
+    gap: 120px;
+    border-radius: 25px;
+    box-shadow: 0px 1px 13px 0px #0000002E;
+}
+.left{
+    width: 506px;
+    height: 700px;
+}
+.left #left-mini{
+    width: 506px;
+    height: 700px;
+    border-radius: 25px;
+    background-color: #D9D9D9;
+    position: relative;
+}
+#left-mini .vt{
+    width: 702.3px;
+    height: 900.93px;
+    top: -139px;
+    left: -126px;
+}
+.vt #vt1{
+    position: absolute;
+    width: 257.2px;
+    height: 304.93px;
+    top: 395px;
+    left: -60px;
+    z-index: 2;
+}
+.vt #vt2{
+    position: absolute;
+    width: 294.3px;
+    height: 304.9px;
+    top: -50px;
+    left: 220px;
+    z-index: 2;
+}
+#left-mini .logoSG{
+    position: absolute;
+    width: 155px;
+    height: 150px;
+    top: 275px;
+    left: 171px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+.logoSG #logoSG{
+    width: 50.28px;
+    height: 59.23px;
+    margin: 10px;
+}
+.logoSG #SG{
+    margin: 5px;
+}
+.logoSG #contentSG{
+    margin-bottom: 10px;
+}
+.logoSG #C{
+    width: 81.64px;
+    height: 9.74px;
+    top: 407.09px;
+    left: 207.68px;
+    background: radial-gradient(35.52% 42.64% at 50% 50.01%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+}
+#bg{
+    position: absolute;
+    width: 507px;
+    height: 700px;
+    top: 0px;
+    left: -1px;
+    background-color: #D1DFECE5;
+    z-index: 1;
+    border-radius: 30px;
+}
+#left-mini .DsImg{
+    position: absolute;
+    width: 507px;
+    height: 700px;
+    top: 0px;
+    left: -1px;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    z-index: 0;
+}
+.DsImg img{
+    width: 169px;
+    height: 118px;
+    z-index: -1;
+}
+.right{
+    width: 278px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    top: 150px;
+}
+.top{
+    position: relative;
+    display: flex;
+    z-index: 10;
+    width: 278px;
+    height: 38px;
+}
+.top button{
+    border: 1px solid transparent;
+    background-color: #fff;
+    width: 50%;
+    padding: 5px 0;
+}
+.bottom{
+    margin-top: 30px;
+    position: relative;
+    height: 100%;
+    width: 278px;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container form{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.container input{
+    background-color: #FFFFFF;
+    border: none;
+    margin: 8px 0px 20px;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 2px;
+    width: 278px;
+    height: 38px;
+    outline: none;
+    border: 1px solid #D9D9D9;
+}
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+.sign-in{
+    width: 100%;
+    z-index: 2;
+}
+.container.active .sign-in{
+    opacity: 0;
+}
+.sign-up{
+    width: 100%;
+    opacity: 0;
+    z-index: 1;
+}
+.container.active .sign-up{
+    opacity: 1;
+    z-index: 5;
+}
+form button{
+    width: 278px;
+    height: 38px;
+    border: 1px solid transparent;
+    background-color: #00A6DA;
+    color: #fff;
+    border-radius: 41px;
+    box-shadow: 0px 2px 0px 0px #0000000B;
+}
+.right .top .id1{
+    border-bottom: 3px solid rgb(72, 72, 196);
+}

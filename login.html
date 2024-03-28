@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <div id="img1">
+        <img src="./img/img.svg" alt="">
+    </div>
+    <img id="img2" src="./img/img2.svg" alt="">
+    <div id="img3">
+        <img src="./img/img3.svg" alt="">
+    </div>
+    <div class="container" id="container">
+        <div class="left">
+            <div id="left-mini">
+                <div class="vt">
+                    <img id="vt1" src="./img/img4.svg" alt="">
+                    <img id="vt2" src="./img/img5.svg" alt="">
+                </div>
+                <div class="logoSG">
+                    <img id="logoSG" src="./img/logoSG.svg" alt="">
+                    <img id="SG" src="./img/SG.svg" alt="">
+                    <img id="contentSG" src="./img/content.svg" alt="">
+                    <img id="C" src="./img/C.svg" alt="">
+                </div>
+                <div id="bg"></div>
+                <div class="DsImg">
+                    <img src="./img/image1.png" alt="">
+                    <img src="./img/image10.png" alt="">
+                    <img src="./img/image11.png" alt="">
+                    <img src="./img/image12.png" alt="">
+                    <img src="./img/image13.png" alt="">
+                    <img src="./img/image14.png" alt="">
+                    <img src="./img/image15.png" alt="">
+                    <img src="./img/image16.png" alt="">
+                    <img src="./img/image17.png" alt="">
+                    <img src="./img/image18.png" alt="">
+                    <img src="./img/image2.png" alt="">
+                    <img src="./img/image3.png" alt="">
+                    <img src="./img/image4.png" alt="">
+                    <img src="./img/image5.png" alt="">
+                    <img src="./img/image6.png" alt="">
+                    <img src="./img/image7.png" alt="">
+                    <img src="./img/image8.png" alt="">
+                    <img src="./img/image9.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="top">
+                <button class="hidden id1" id="login">Login</button>
+                <button class="hidden" id="register">Register</button>
+            </div>
+            <div class="bottom">
+                <div class="form-container sign-in">
+                    <form action="">
+                        <label for="">Email</label>
+                        <input type="email" placeholder="Email" id="loginEmail">
+                        <label for="">Password</label>
+                        <input type="text" placeholder="Password" id="loginPassword">
+                        <div style="display: flex; justify-content: flex-start;">
+                            <input type="checkbox" id="check" style="width: 16px; margin: 0 5px 0 0;"><label style="padding-top: 9px;" for="check">Remember me</label><br>
+                        </div>
+                        <button type="button" onclick="login()" id="buttonlogin">Login</button>
+                    </form>
+                </div> 
+                <div class="form-container sign-up" id="registerform">
+                    <form action="">
+                        <label for="">Name</label>
+                        <input type="text" placeholder="Name" id="registerName">
+                        <label for="">Email</label>
+                        <input type="email" placeholder="Email" id="registerEmail">
+                        <label for="">Password</label>
+                        <input type="password" placeholder="Password" id="registerPassword">
+                        <button type="button" onclick="register()">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./login.js"></script>
+</body>
+</html>
