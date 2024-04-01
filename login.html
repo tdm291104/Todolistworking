@@ -59,23 +59,27 @@
                 <div class="form-container sign-in">
                     <form action="">
                         <label for="">Email</label>
-                        <input type="email" placeholder="Email" id="loginEmail">
+                        <input type="email" placeholder="Enter your email" id="loginEmail" onblur="validateEmail()" required>
                         <label for="">Password</label>
-                        <input type="text" placeholder="Password" id="loginPassword">
+                        <input type="password" placeholder="Enter your password" id="loginPassword"  onblur="validatePws()" required>
                         <div style="display: flex; justify-content: flex-start;">
                             <input type="checkbox" id="check" style="width: 16px; margin: 0 5px 0 0;"><label style="padding-top: 9px;" for="check">Remember me</label><br>
                         </div>
                         <button type="button" onclick="login()" id="buttonlogin">Login</button>
                     </form>
+                    <!-- correct_login@example.com
+                    C0rr3Ct_P@55w0rd -->
                 </div> 
                 <div class="form-container sign-up" id="registerform">
                     <form action="">
                         <label for="">Name</label>
-                        <input type="text" placeholder="Name" id="registerName">
+                        <input type="text" placeholder="Name" id="registerName" onblur="validateNameRegister()" required>
                         <label for="">Email</label>
-                        <input type="email" placeholder="Email" id="registerEmail">
+                        <input type="email" placeholder="Email" id="registerEmail" onblur="validateEmailRegister()" required>
                         <label for="">Password</label>
-                        <input type="password" placeholder="Password" id="registerPassword">
+                        <input type="password" placeholder="Password" id="registerPassword" onblur="validatePwsRegister()" required>
+                        <label for="">Password repeat</label>
+                        <input type="password" placeholder="Password repeat" id="registerPasswordrepeat" onblur="validatePwsRegisterRepeat()" required>
                         <button type="button" onclick="register()">Register</button>
                     </form>
                 </div>

@@ -1,8 +1,22 @@
 *{
     box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 body{
     margin: 40px 100px;
+}
+#Logout{
+    position: absolute;
+    top: 30px;
+    right: 100px;
+    width: 96px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #033240;
+    color: #fff;
+    box-shadow: 0px 2px 0px 0px #0000000B;
 }
 header{
     display: flex;
@@ -43,14 +57,14 @@ header{
     display: flex;
     padding: 0;
     width: 96px;
-    height: 20px;
+    height: 30px;
     align-items: center;
     background-color: #fff;
     border: #fff;
     border-radius: 5px;
 }
 #newtask button:active{
-    box-shadow: 2px 2px 5px #fc894d;
+    box-shadow: 2px 2px 5px #786e68;
 }
 #newtask button span:first-child{
     display: flex;
@@ -67,21 +81,117 @@ header{
     line-height: 20.16px;
     text-align: center;
 }
+#bginput{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 5;
+    justify-content: center;
+    align-items: center;
+}
 #input{
     position: absolute;
-    display: none;
+    display: flex;
     justify-content: center;
-    top: 30%;
-    left: 25%;
-    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+#input #X{
+    position: absolute;
+    top: 5%;
+    left: 92%;
+    font-size: 24px;
+}
+#input h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 #input form{
+    display: flex;
+    flex-direction: column;
+}
+#bg{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #F5F5F5;
+    opacity: 0.9;
+    z-index: 5;
+    left: 0;
+    top: 0;
+}
+/* Edit */
+#bginputedit{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 8;
+    justify-content: center;
+    align-items: center;
+}
+#inputedit{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+#inputedit #X{
+    position: absolute;
+    top: 5%;
+    left: 92%;
+    font-size: 24px;
+}
+#inputedit h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+#inputedit form{
     display: flex;
     flex-direction: column;
 }
 input{
     margin-bottom: 10px;
     height: 30px;
+    width: 500px;
+    border-radius: 5px;
+}
+textarea{
+    width: 500px;
+    max-width: 500px;
+    min-width: 500px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+#input button{
+    border-radius: 5px;
+    padding: 3px 0;
+}
+form div label{
+    margin-right: 60px;
+}
+form div label:last-child{
+    margin-right: 0px;
+}
+form div input{
+    width: 13px;
+    height: 13px;
 }
 .container{
     display: flex;
@@ -93,6 +203,7 @@ input{
     flex-direction: column;
     align-items: center;
     margin: 50px 0 0 0;
+    width: 310px;
 }
 .headerlists{
     width: 310px;
@@ -114,7 +225,7 @@ input{
 .headerlists::after{
     display: block;
     content: "";
-    width: 300px;
+    width: 290px;
     height: 2px;
     transform: translateY(20px);
 }
@@ -164,11 +275,189 @@ h2{
     height: 100%;
     width: 100%;
 }
-.list{
+#todos .list{
     width: 300px;
-    min-height: 200px;
+    min-height: 180px;
+    height: auto;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 10px;
     box-shadow: 0px 4px 4px 0px #0000001A;
+}
+#doings .list{
+    width: 300px;
+    min-height: 180px;
+    height: auto;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 4px 0px #0000001A;
+}
+#completeds .list{
+    width: 300px;
+    min-height: 180px;
+    height: auto;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 4px 0px #0000001A;
+}
+#blockeds .list{
+    width: 300px;
+    min-height: 180px;
+    height: auto;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 4px 0px #0000001A;
+}
+.toplist{
+    display: flex;
+    justify-content: space-between;
+}
+.list h3{
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20.16px;
+    width: 200px;
+}
+.list a{
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15.12px;
+    color: #4D8EFF;
+}
+.list p{
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12.6px;
+    color: #5A5C63;
+    margin-bottom: 5px;
+}
+.list p::before{
+    content: "";
+    display: block;
+    width: 200px;
+    height: 1px;
+    background-color: #DBDBDB;
+    margin-bottom: 10px;
+}
+.list span{
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12.6px;
+}
+.list i{
+    font-size: 12px;
+}
+.list .icons i{
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+#todos{
+    overflow-y: auto; 
+    height: 700px;
+    width: 100%;
+}
+#todos::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+} 
+#doings{
+    overflow-y: auto; 
+    height: 700px;
+    width: 100%;
+}
+#doings::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+#completeds{
+    overflow-y: auto; 
+    height: 700px;
+    width: 100%;
+}
+#completeds::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+#blockeds{
+    overflow-y: auto; 
+    height: 700px;
+    width: 100%;
+}
+#blockeds::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+form .error{
+    border: 1px solid red;
+}
+form .success{
+    border: 1px solid greenyellow;
+}
+
+@media only screen and (max-width: 1440px) {
+    header{
+        flex-direction: column;
+    }
+    header #logo{
+        align-items: center;
+    }
+    header #newtask{
+        justify-content: center;
+    }
+    #newtask button{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        width: 100px;
+        height: 50px;
+        border: 1px solid #ac9f9f;
+    }
+    .form{
+        width: 100%;
+        max-height: 400px;
+    }
+    .headerlists{
+        width: 100%;
+    }
+    .headerlists::after{
+        width: 100%;
+    }
+    #todos .list{
+        width: 100%;
+    }
+    #doings .list{
+        width: 100%;
+    }
+    #completeds .list{
+        width: 100%;
+    }
+    #blockeds .list{
+        width: 100%;
+    }
+    #todos{
+        overflow-y: auto; 
+        height: 100%;
+        width: 100%;
+    }
+    #doings{
+        overflow-y: auto; 
+        height: 100%;
+        width: 100%;
+    }
+    #completeds{
+        overflow-y: auto; 
+        height: 100%;
+        width: 100%;
+    }
+    #blockeds{
+        overflow-y: auto; 
+        height: 100%;
+        width: 100%;
+    }
 }

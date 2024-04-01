@@ -69,6 +69,7 @@ body{
     border-radius: 25px;
     background-color: #D9D9D9;
     position: relative;
+    overflow: hidden;
 }
 #left-mini .vt{
     width: 702.3px;
@@ -78,18 +79,18 @@ body{
 }
 .vt #vt1{
     position: absolute;
-    width: 257.2px;
-    height: 304.93px;
-    top: 395px;
-    left: -60px;
+    width: 120px;
+    height: 400px;
+    top: 370px;
+    left: -10px;
     z-index: 2;
 }
 .vt #vt2{
     position: absolute;
-    width: 294.3px;
-    height: 304.9px;
-    top: -50px;
-    left: 220px;
+    width: 200px;
+    height: 300px;
+    top: -60px;
+    left: 290px;
     z-index: 2;
 }
 #left-mini .logoSG{
@@ -151,7 +152,7 @@ body{
 }
 .right{
     width: 278px;
-    height: 400px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -231,5 +232,12 @@ form button{
     box-shadow: 0px 2px 0px 0px #0000000B;
 }
 .right .top .id1{
-    border-bottom: 3px solid rgb(72, 72, 196);
+    border-bottom: 3px solid #409fbb;
+}
+
+.bottom .form-container .error{
+    border: 1px solid red;
+}
+.bottom .form-container .success{
+    border: 1px solid greenyellow;
 }

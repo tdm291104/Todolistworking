@@ -9,8 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet"/>
 </head>
 <body>
+    <button id="Logout">Log out</button>
     <header>
         <div id="logo">
             <img id="imglogo" src="./img/logoTask.png" alt="">
@@ -20,79 +22,95 @@
             </div>
         </div>
         <div id="newtask">
-            <button onclick="addTodo()"><span>+</span> <span>New task</span></button>
+            <button onclick="OnInput()"><span>+</span> <span>New task</span></button>
         </div>
     </header>
-    <div id = "input">
-        <form>
-            <input type="text" required>
-            <input type="text" required>
-            <input type="text" required>
-            <button onclick="SaveInput()">ADD</button>
-        </form>
+    <div id="bg"></div>
+    <div id = "bginput">
+        <div id = "input">
+            <i id="X" class="fa-solid fa-xmark" onclick="OffInput()"></i>
+            <h2>Add new todo</h2>
+            <form>
+                <input id="a" type="text" placeholder="Category Ect: Marketing" onblur="validateA()" required>
+                <input id="h3" type="text" placeholder="Title" onblur="validateH3()" required>
+                <textarea id="p" rows="4" placeholder="Content" onblur="validateP()" required style="width: 500px;"></textarea>
+                <button type="button" onclick="SaveInput()">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div id = "bginputedit">
+        <div id = "inputedit">
+            <i id="X" class="fa-solid fa-xmark" onclick="OffInputEdit()"></i>
+            <h2>Edit</h2>
+            <form>
+                <input id="edita" type="text" placeholder="Category Ect: Marketing" onblur="validateEditA()" required>
+                <input id="edith3" type="text" placeholder="Title" onblur="validateEditH3()" required>
+                <textarea id="editp" rows="4" placeholder="Content" onblur="validateEditP()" required style="width: 500px;"></textarea>
+                <div>
+                    <input type="radio" id="todoradio" name="check"><label for="Todo">Todo</label>
+                    <input type="radio" id="doingradio" name="check"><label for="Doing">Doing</label>
+                    <input type="radio" id="completedradio" name="check"><label for="Completed">Completed</label>
+                    <input type="radio" id="blockedradio" name="check"><label for="Blocked">Blocked</label>
+                </div>
+                <button type="button" onclick="SaveInputEdit()">Submit</button>
+            </form>
+        </div>
     </div>
     <div class="container">
-        <div class="form" id="todos">
+        <div class="form" >
             <div id="todo" class="headerlists">
                 <div>
                     <h2>Todoing</h2>
-                    <span>3</span>
+                    <span id="listCountTodo">0</span>
                 </div>
             </div>
-            <div class="list" id="todos" draggable="true">
-                <a href="">Marketing</a>
-                <h3>Write SEO article for new product</h3>
-                <p>this is an mkkm mkmkmsad mkasdm anksdmk aksdnk</p>
-                <span>29/11/2004</span>
-                <div class="icons">
-                    <i class="fas fa-edit edit-icon" onclick="editTodo()"></i>
-                    <i class="fas fa-trash delete-icon" onclick="deleteTodo()"></i>
+            <div id="todos">
+                <div class="list" id="todos" draggable="true">
+                    <div class="toplist">
+                        <a href="">Marketing</a>
+                        <div class="icons">
+                            <i class="bx bx-edit-alt" onclick="OnInputEdit(event)"></i>
+                            <i class="bx bx-trash-alt" onclick="deleteTodo(event)"></i>
+                        </div>
+                    </div>
+                    <h3>Write SEO article for new product</h3>
+                    <p>This is an existential moment for effective altruism and the rationalist community writ-large.</p>
+                    <i class="fa-regular fa-clock"></i> <span>June 30, 2022</span>
                 </div>
             </div>
-            <div class="list" id="todos" draggable="true">
-                <a href="">Marketing</a>
-                <h3>Write SEO article for new product</h3>
-                <p>this is an mkkm mkmkmsad mkasdm anksdmk aksdnk</p>
-                <span>29/11/2004</span>
-                <div class="icons">
-                    <i class="fas fa-edit edit-icon" onclick="editTodo()"></i>
-                    <i class="fas fa-trash delete-icon" onclick="deleteTodo()"></i>
-                </div>
-            </div>
-            <div class="list" id="todos" draggable="true">
-                <a href="">Marketing</a>
-                <h3>Write SEO article for new product</h3>
-                <p>this is an mkkm mkmkmsad mkasdm anksdmk aksdnk</p>
-                <span>29/11/2004</span>
-                <div class="icons">
-                    <i class="fas fa-edit edit-icon" onclick="editTodo()"></i>
-                    <i class="fas fa-trash delete-icon" onclick="deleteTodo()"></i>
-                </div>
-            </div>
-            
         </div>
-        <div class="form" id="doings">
+        <div class="form">
             <div id="doing" class="headerlists">
                 <div>
                     <h2>Doing</h2>
-                    <span>3</span>
+                    <span id="listCountDoing">0</span>
                 </div>
+                
+            </div>
+            <div id="doings">
+
             </div>
         </div>
-        <div class="form" id="completeds">
+        <div class="form">
             <div id="completed" class="headerlists">
                 <div>
                     <h2>Completed</h2>
-                    <span>3</span>
+                    <span id="listCountCompleted">0</span>
                 </div>
+                
             </div>
-        </div>
-        <div class="form" id="blockeds">
+            <div id="completeds"></div>
+        </div>  
+        <div class="form">
             <div id="blocked" class="headerlists">
                 <div>
                     <h2>Blocked</h2>
-                    <span>3</span>
+                    <span id="listCountBlocked">0</span>
                 </div>
+                
+            </div>
+            <div id="blockeds">
+                    
             </div>
         </div>
     </div>

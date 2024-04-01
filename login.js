@@ -10,7 +10,7 @@ loginBtn.addEventListener('click', ()=>{
     container.classList.remove('active')
 })
 
-const loginApi = "https://api.storerestapi.com/auth/login";
+const loginApi = "https://recruitment-api.pyt1.stg.jmr.pl/login";
 const email = document.getElementById("loginEmail")
 const password = document.getElementById("loginPassword")
 const buttonlogin = document.getElementById("buttonlogin")
@@ -19,8 +19,8 @@ function login(){
   fetch(loginApi, {
     method: "POST",
     body: JSON.stringify({
-      email: loginEmail.value.trim(),
-      password: loginPassword.value.trim(),
+      login: email.value.trim(),
+      password: password.value.trim()
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
@@ -28,8 +28,8 @@ function login(){
   })
     .then((response) => response.json())
     .then((res) => {
-      if (res.status == 200) {
-        localStorage.access_token = res.data.access_token;
+      if (res.status === "ok") {
+        localStorage.status = res.status;
         alert("Đăng nhập thành công");
         console.log(res);
         updateButtonUI(true);
@@ -37,11 +37,13 @@ function login(){
       }
       else{
         alert("Đăng nhập thất bại");
+        validateForm()
         console.log(res)
       }
     })
     .catch((err) => {
-      alert("Đăng nhập thất bại");
+      alert("Đăng nhập thất bại 33");
+      validateForm()
       console.log(err);
     })
     .finally(() => {
@@ -52,6 +54,8 @@ function login(){
 function logout() {
   localStorage.removeItem('access_token');
   updateButtonUI(false);
+  email.classList.remove("success")
+  password.classList.remove("success")
 }
 
 function updateButtonUI(x) {
@@ -59,7 +63,7 @@ function updateButtonUI(x) {
     buttonlogin.innerText = "Log Out";
     buttonlogin.onclick = logout;
   } else {
-    buttonlogin.innerText = "Sign In";
+    buttonlogin.innerText = "Login";
     email.value = "";
     password.value = "";
     buttonlogin.onclick = login;
@@ -80,6 +84,7 @@ const registerApi = "https://api.storerestapi.com/auth/register"
 const registerName =  document.getElementById("registerName")
 const registerEmail = document.getElementById("registerEmail")
 const registerPassword = document.getElementById("registerPassword")
+const registerPasswordrepeat = document.getElementById("registerPasswordrepeat")
 
 function register(){
   fetch(registerApi, {
@@ -103,14 +108,21 @@ function register(){
         registerName.value = ""
         registerEmail.value = ""
         registerPassword.value = ""
+        registerPasswordrepeat.value = ""
+        registerName.classList.remove("success")
+        registerEmail.classList.remove("success")
+        registerPassword.classList.remove("success")
+        registerPasswordrepeat.classList.remove("success")
       }
       else{
         alert("Đăng ký thất bại");
+        validateFormRegister()
         console.log(res)
       }
     })
     .catch((err) => {
       alert("Đăng ký thất bại");
+      validateFormRegister()
       console.log(err);
     })
     .finally(() => {
@@ -127,3 +139,97 @@ document.querySelectorAll(".container .right .top button").forEach(function(butt
       filterItems(button.textContent);
   });
 });
+
+//Border login
+function validateEmail(){
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if(!emailPattern.test(email.value)){
+      email.classList.add("error")
+      email.classList.remove("success")
+      return false
+  }else if(email.value === ""){
+      email.classList.add("error")
+      email.classList.remove("success")
+      return false
+  }else{
+      email.classList.remove("error")
+      email.classList.add("success")
+      return true
+  }
+}
+
+function validatePws(){
+  if(password.value === ""){
+      password.classList.add("error")
+      password.classList.remove("success")
+      return false
+  }else{
+      password.classList.remove("error")
+      password.classList.add("success")
+      return true
+  }
+}
+function validateForm(){
+  validateEmail()
+  validatePws()
+}
+
+// border register
+
+function validateNameRegister(){
+  if(registerName.value === ""){
+    registerName.classList.add("error")
+    registerName.classList.remove("success")
+    return false
+  }else{
+    registerName.classList.remove("error")
+    registerName.classList.add("success")
+    return true
+  }
+}
+
+function validateEmailRegister(){
+  const emailPatternregister = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if(!emailPatternregister.test(email.value)){
+      registerEmail.classList.add("error")
+      registerEmail.classList.remove("success")
+      return false
+  }else if(registerEmail.value === ""){
+      registerEmail.classList.add("error")
+      registerEmail.classList.remove("success")
+      return false
+  }else{
+      registerEmail.classList.remove("error")
+      registerEmail.classList.add("success")
+      return true
+  }
+}
+
+function validatePwsRegister(){
+  if(registerPassword.value === ""){
+      registerPassword.classList.add("error")
+      registerPassword.classList.remove("success")
+      return false
+  }else{
+      registerPassword.classList.remove("error")
+      registerPassword.classList.add("success")
+      return true
+  }
+}
+function validatePwsRegisterRepeat(){
+  if(registerPasswordrepeat.value === ""){
+      registerPasswordrepeat.classList.add("error")
+      registerPasswordrepeat.classList.remove("success")
+      return false
+  }else{
+      registerPasswordrepeat.classList.remove("error")
+      registerPasswordrepeat.classList.add("success")
+      return true
+  }
+}
+function validateFormRegister(){
+  validateNameRegister()
+  validateEmailRegister()
+  validatePwsRegister()
+  validatePwsRegisterRepeat()
+}
