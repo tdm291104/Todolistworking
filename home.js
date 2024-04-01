@@ -5,8 +5,8 @@ let doing = document.getElementById("doings");
 let completed = document.getElementById("completeds");
 let blocked = document.getElementById("blockeds")
 
-document.addEventListener("click", function(){
-    window.location.href = "login.html"
+logout.addEventListener("click", function(){
+    window.location.href = "index.html"
 })
 
 document.addEventListener("DOMContentLoaded", function() {
