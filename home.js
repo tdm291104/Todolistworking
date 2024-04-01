@@ -154,6 +154,7 @@ function SaveInput() {
             textarea.value = ""
         })
         newtask.style.display = "none"
+        bg.style.display = "none"
         attachDragAndDropEvents();
         alert("Thêm thành công")
         a.classList.remove("success")
@@ -370,6 +371,7 @@ function SaveInputEdit() {
             textarea.value = ""
         })
         edit.style.display = "none"
+        bg.style.display = "none"
         attachDragAndDropEvents();
         alert("Sửa thành công")
         edita.classList.remove("success")
