@@ -33,6 +33,7 @@ function login(){
         alert("Đăng nhập thành công");
         console.log(res);
         updateButtonUI(true);
+        localStorage.setItem('isLoggedIn', true);
         window.location.href = "home.html"
       }
       else{
@@ -233,3 +234,11 @@ function validateFormRegister(){
   validatePwsRegister()
   validatePwsRegisterRepeat()
 }
+
+function checkLoginStatus() {
+  let isLoggedIn = localStorage.getItem('isLoggedIn');
+  if (isLoggedIn === 'true') {
+    window.location.href = 'home.html';
+  }
+}
+checkLoginStatus()

@@ -17,6 +17,7 @@ body{
     background-color: #033240;
     color: #fff;
     box-shadow: 0px 2px 0px 0px #0000000B;
+    cursor: pointer;
 }
 header{
     display: flex;
@@ -62,6 +63,7 @@ header{
     background-color: #fff;
     border: #fff;
     border-radius: 5px;
+    cursor: pointer;
 }
 #newtask button:active{
     box-shadow: 2px 2px 5px #786e68;
@@ -182,6 +184,7 @@ textarea{
 #input button{
     border-radius: 5px;
     padding: 3px 0;
+    cursor: pointer;
 }
 form div label{
     margin-right: 60px;
@@ -195,7 +198,7 @@ form div input{
 }
 .container{
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
 }
 .form{
@@ -322,7 +325,8 @@ h2{
     line-height: 20.16px;
     width: 200px;
 }
-.list a{
+.list #a{
+    text-decoration-line: underline;
     font-size: 12px;
     font-weight: 700;
     line-height: 15.12px;
@@ -350,14 +354,16 @@ h2{
 }
 .list i{
     font-size: 12px;
+    cursor: pointer;
 }
 .list .icons i{
     font-size: 18px;
     margin-left: 5px;
+    cursor: pointer;
 }
 
 #todos{
-    overflow-y: auto; 
+    overflow-y: auto;
     height: 700px;
     width: 100%;
 }
@@ -404,6 +410,9 @@ form .success{
     header{
         flex-direction: column;
     }
+    .container{
+        flex-direction: column;
+    }
     header #logo{
         align-items: center;
     }
@@ -417,6 +426,7 @@ form .success{
         width: 100px;
         height: 50px;
         border: 1px solid #ac9f9f;
+        cursor: pointer;
     }
     .form{
         width: 100%;
@@ -444,20 +454,24 @@ form .success{
         overflow-y: auto; 
         height: 100%;
         width: 100%;
+        min-height: 20px;
     }
     #doings{
         overflow-y: auto; 
         height: 100%;
         width: 100%;
+        min-height: 20px;
     }
     #completeds{
         overflow-y: auto; 
         height: 100%;
         width: 100%;
+        min-height: 20px;
     }
     #blockeds{
         overflow-y: auto; 
         height: 100%;
         width: 100%;
+        min-height: 20px;
     }
 }

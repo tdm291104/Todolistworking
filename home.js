@@ -1,3 +1,10 @@
+function checkLoginStatus() {
+    let isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn === 'false') {
+      window.location.href = 'index.html';
+    }
+}
+checkLoginStatus()
 const logout = document.getElementById("Logout");
 let lists = document.getElementsByClassName("list");
 let todo = document.getElementById("todos");
@@ -6,14 +13,15 @@ let completed = document.getElementById("completeds");
 let blocked = document.getElementById("blockeds")
 
 logout.addEventListener("click", function(){
-    window.location.href = "index.html"
+    localStorage.isLoggedIn = false;
+    window.location.href = 'index.html'
 })
 
 document.addEventListener("DOMContentLoaded", function() {
     loadState();
-    attachDragAndDropEvents(); // Gắn sự kiện kéo và thả sau khi trang được tải lại
-    updateListCount()
-});
+    attachDragAndDropEvents();
+    updateListCount();
+})
 
 // Load trạng thái từ Local Storage
 function loadState() {
@@ -194,14 +202,14 @@ function addTodo(input_a, input_h3, input_p) {
     // Set inner HTML for the todo item, including delete and edit icons
     todoDiv.innerHTML = `
     <div class="toplist">
-        <a href="">${input_a}</a>
+        <span id="a" href="">${input_a}</span>
         <div class="icons">
             <i class="bx bx-edit-alt" onclick="OnInputEdit(event)"></i>
             <i class="bx bx-trash-alt" onclick="deleteTodo(event)"></i>
         </div>
     </div>
-    <h3>${input_h3}</h3>
-    <p>${input_p}</p>
+    <h3 id="h3">${input_h3}</h3>
+    <p id="p">${input_p}</p>
     <i class="fa-regular fa-clock"></i> <span>${getCurrentDate()}</span>
     `;
 
@@ -418,6 +426,7 @@ function validateSaveInputEdit(){
     validateEditH3()
     validateEditP()
 }
+
 
 
 // localStorage.removeItem("listsState")
