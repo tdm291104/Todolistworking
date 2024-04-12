@@ -429,4 +429,4 @@ function validateSaveInputEdit(){
 
 
 
-localStorage.removeItem("listsState")
+// localStorage.removeItem("listsState")
