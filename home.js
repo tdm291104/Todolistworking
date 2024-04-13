@@ -273,23 +273,24 @@ function validateSaveInput(){
 // Edit
 let editingTodoDiv = null;
 const edit = document.getElementById("bginputedit")
-function OnInputEdit(event){
+function OnInputEdit(event) {
     event.stopPropagation();
-    edit.style.display = "flex"
-    bg.style.display = "block"
+    edit.style.display = "flex";
+    bg.style.display = "block";
     
-    var adiv = event.target.closest('.list').querySelector("a")
-    var h3div = event.target.closest('.list').querySelector("h3")
-    var pdiv = event.target.closest('.list').querySelector("p")
-    edita.value = adiv.textContent
-    edith3.value = h3div.textContent
-    editp.value = pdiv.textContent
-    edita.classList.remove("error")
-    edith3.classList.remove("error")
-    editp.classList.remove("error")
+    var listItem = event.target.closest('.list');
+    var adiv = listItem.querySelector("span");
+    var h3div = listItem.querySelector("h3");
+    var pdiv = listItem.querySelector("p");
+    edita.value = adiv.textContent;
+    edith3.value = h3div.textContent;
+    editp.value = pdiv.textContent;
+    edita.classList.remove("error");
+    edith3.classList.remove("error");
+    editp.classList.remove("error");
 
-    editingTodoDiv = event.target.closest('.list')
-
+    editingTodoDiv = listItem;
+    
     var parentDivId = editingTodoDiv.parentNode.id;
     switch (parentDivId) {
         case 'todos':
@@ -308,6 +309,7 @@ function OnInputEdit(event){
             break;
     }
 }
+
 function OffInputEdit(){
     edit.style.display = "none"
     bg.style.display = "none"
@@ -352,7 +354,7 @@ document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
 });
 
 function Edit(input_a, input_h3, input_p){
-    var adiv1 = editingTodoDiv.querySelector("a");
+    var adiv1 = editingTodoDiv.querySelector("span");
     var h3div1 = editingTodoDiv.querySelector("h3");
     var pdiv1 = editingTodoDiv.querySelector("p");
 
